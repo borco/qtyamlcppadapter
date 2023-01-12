@@ -2,7 +2,7 @@
 
 #include <QStringList>
 
-#include "yaml-cpp/yaml.h"
+#include "yaml-cpp/emitter.h"
 
 namespace qtyamlcppadapter {
 

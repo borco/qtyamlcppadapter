@@ -1,8 +1,10 @@
 #include "yamlhelper.h"
 
+#include "yaml-cpp/yaml.h" // IWYU pragma: keep
+
 #include <QDebug>
 
-using namespace qtyamlcppadapter;
+namespace qtyamlcppadapter {
 
 void emitYaml(YAML::Emitter &out, const char *key, const QString &value)
 {
@@ -214,4 +216,6 @@ quint64 parsedFileSize(const QString &value)
 //    qDebug() << "Parsed file size:" << value << "->" << size;
 
     return size;
+}
+
 }
