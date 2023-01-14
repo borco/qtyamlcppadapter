@@ -1,3 +1,7 @@
+/*
+    Copyright 2023 by Ioan Calin Borcoman <iborco@gmail.com>
+*/
+
 #include "yamlhelper.h"
 
 #include "yaml-cpp/yaml.h" // IWYU pragma: keep

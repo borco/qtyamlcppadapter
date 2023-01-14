@@ -1,7 +1,12 @@
+/*
+    Copyright 2023 by Ioan Calin Borcoman <iborco@gmail.com>
+*/
+
 #pragma once
 
 #include <QStringList>
 
+#include "enumhelper.h"
 #include "yaml-cpp/emitter.h"
 
 namespace qtyamlcppadapter {
@@ -26,5 +31,12 @@ quint64 fileSizeFromYaml(const YAML::Node &node, const char *key, quint64 defaul
 quint64 durationFromYaml(const YAML::Node &node, const char *key, quint64 defaultValue = 0UL);
 QString stringFromYaml(const YAML::Node& node, const char* key, const QString& defaultValue = QString());
 QStringList stringListFromYaml(const YAML::Node& node, const char* key, bool *needsSave = nullptr, const QStringList& defaultValue = QStringList());
+
+template <typename E>
+E enumFromYaml(const YAML::Node &node, const char *key, E defaultValue) {
+    auto repr = stringFromYaml(node, key, toString(defaultValue));
+    auto optional_value = fromString<E>(repr);
+    return optional_value ? optional_value.value() : defaultValue;
+}
 
 }

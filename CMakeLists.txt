@@ -7,6 +7,7 @@ set(YAML_BUILD_SHARED_LIBS OFF CACHE BOOL "disable shared libs")
 
 qt_add_library(${LIB_NAME}
     STATIC
+    src/qtyamlcppadapter/enumhelper.h
     src/qtyamlcppadapter/yamlhelper.cpp
     src/qtyamlcppadapter/yamlhelper.h
 )
