@@ -114,4 +114,13 @@ QDateTime dateTimeFromYaml(const YAML::Node &node, const char *key, const QDateT
     return QDateTime::fromString(repr, Qt::ISODate);
 }
 
+QDate dateFromYaml(const YAML::Node &node, const char *key, const QDate &defaultValue)
+{
+    if (!node[key])
+        return defaultValue;
+
+    auto repr = QString::fromStdString(node[key].as<std::string>());
+    return QDate::fromString(repr, Qt::ISODate);
+}
+
 }

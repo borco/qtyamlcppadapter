@@ -28,6 +28,7 @@ int intFromYaml(const YAML::Node& node, const char* key, int defaultValue = 0);
 quint64 quint64FromYaml(const YAML::Node &node, const char *key, quint64 defaultValue = 0UL);
 QString stringFromYaml(const YAML::Node& node, const char* key, const QString& defaultValue = QString());
 QStringList stringListFromYaml(const YAML::Node& node, const char* key, bool *needsSave = nullptr, const QStringList& defaultValue = QStringList());
+QDate dateFromYaml(const YAML::Node& node, const char* key, const QDate& defaultValue = QDate());
 QDateTime dateTimeFromYaml(const YAML::Node& node, const char* key, const QDateTime& defaultValue = QDateTime());
 
 template <typename E>
