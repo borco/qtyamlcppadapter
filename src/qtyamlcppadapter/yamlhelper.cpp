@@ -43,6 +43,16 @@ void emitYaml(YAML::Emitter &out, const char *key, const QStringList &list, bool
     }
 }
 
+void emitYaml(YAML::Emitter &out, const char *key, const QDate &value)
+{
+    out << YAML::Key << key << YAML::Value << value.toString(Qt::ISODate).toStdString();
+}
+
+void emitYaml(YAML::Emitter &out, const char *key, const QDateTime &value)
+{
+    out << YAML::Key << key << YAML::Value << value.toUTC().toString(Qt::ISODate).toCFString();
+}
+
 void emitYamlLiteral(YAML::Emitter &out, const char *key, const QString &value)
 {
     if (value.isEmpty())

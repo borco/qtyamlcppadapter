@@ -21,6 +21,8 @@ void emitYaml(YAML::Emitter& out, const char* key, bool value);
 void emitYaml(YAML::Emitter& out, const char* key, quint64 value);
 void emitYaml(YAML::Emitter& out, const char* key, int value);
 void emitYaml(YAML::Emitter& out, const char* key, const QStringList& list, bool compact = true);
+void emitYaml(YAML::Emitter& out, const char* key, const QDate& value);
+void emitYaml(YAML::Emitter& out, const char* key, const QDateTime& value);
 void emitYamlLiteral(YAML::Emitter& out, const char* key, const QString& value);
 
 bool boolFromYaml(const YAML::Node& node, const char* key, bool defaultValue = false);
