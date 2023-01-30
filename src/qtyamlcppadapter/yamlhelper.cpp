@@ -50,7 +50,7 @@ void emitYaml(YAML::Emitter &out, const char *key, const QDate &value)
 
 void emitYaml(YAML::Emitter &out, const char *key, const QDateTime &value)
 {
-    out << YAML::Key << key << YAML::Value << value.toUTC().toString(Qt::ISODate).toCFString();
+    out << YAML::Key << key << YAML::Value << value.toUTC().toString(Qt::ISODate).toStdString();
 }
 
 void emitYamlLiteral(YAML::Emitter &out, const char *key, const QString &value)
