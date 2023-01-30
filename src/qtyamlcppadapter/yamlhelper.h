@@ -38,4 +38,9 @@ E enumFromYaml(const YAML::Node &node, const char *key, E defaultValue) {
     return optional_value ? optional_value.value() : defaultValue;
 }
 
+template <typename E>
+void emitYaml(YAML::Emitter& out, const char* key, E value) {
+    emitYaml(out, key, toString(value));
+}
+
 }
