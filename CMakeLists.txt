@@ -7,7 +7,6 @@ set(YAML_BUILD_SHARED_LIBS OFF CACHE BOOL "disable shared libs")
 
 qt_add_library(${LIB_NAME}
     STATIC
-    src/qtyamlcppadapter/enumhelper.h
     src/qtyamlcppadapter/yamlhelper.cpp
     src/qtyamlcppadapter/yamlhelper.h
 )
@@ -19,6 +18,7 @@ target_include_directories(${LIB_NAME} PUBLIC
 target_link_libraries(${LIB_NAME} PUBLIC
     Qt6::Core
     yaml-cpp
+    iborcocpputils
 )
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/yaml-cpp)

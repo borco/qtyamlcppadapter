@@ -7,7 +7,7 @@
 #include <QDateTime>
 #include <QStringList>
 
-#include "enumhelper.h"
+#include "iborcocpputils/enumhelper.h"
 
 namespace YAML {
 class Emitter;
