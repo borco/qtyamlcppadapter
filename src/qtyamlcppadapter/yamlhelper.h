@@ -35,14 +35,14 @@ QDateTime dateTimeFromYaml(const YAML::Node& node, const char* key, const QDateT
 
 template <typename E>
 E enumFromYaml(const YAML::Node &node, const char *key, E defaultValue) {
-    auto repr = stringFromYaml(node, key, toString(defaultValue));
-    auto optional_value = fromString<E>(repr);
+    auto repr = stringFromYaml(node, key, iborcocpputils::toString(defaultValue));
+    auto optional_value = iborcocpputils::fromString<E>(repr);
     return optional_value ? optional_value.value() : defaultValue;
 }
 
 template <typename E>
 void emitYaml(YAML::Emitter& out, const char* key, E value) {
-    emitYaml(out, key, toString(value));
+    emitYaml(out, key, iborcocpputils::toString(value));
 }
 
 }
